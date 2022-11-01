@@ -48,5 +48,16 @@ button:hover {
   display: block;
   margin-top: 0.8rem;
   font-size: 1.2rem;
-  
+
 }
+
+.messageSuccess { 
+  margin-top: 24px;
+  display: flex;
+  justify-content: center;
+}
+
+.messageSuccess p{ 
+ color:  #00ff00;
+}
+
