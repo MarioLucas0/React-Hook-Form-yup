@@ -1,4 +1,5 @@
 import { yupResolver } from '@hookform/resolvers/yup';
+import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 
@@ -19,12 +20,13 @@ const schema = yup.object({
 
 function App() {
 
+  const [isSuccess, setIsSuccess] = useState(false)
   const { register, handleSubmit , formState: { errors } } = useForm({
     resolver: yupResolver(schema)
   })
 
   const onSubmit = () => {
-        console.log("ok")
+    setIsSuccess(true)
   }
 
 
@@ -57,7 +59,7 @@ function App() {
 
       <button type='submit'>Enviar formulario</button>
 
-      
+      {isSuccess && <p>Formulario enviado com sucesso! </p>}
        
     </form>
   )
